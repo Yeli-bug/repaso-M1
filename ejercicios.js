@@ -34,8 +34,21 @@ return decimal;
  * @returns {boolean} - deberia retornar true o false.
  */
 
-function same(arr1, arr2) {}
 
+function same(arr1, arr2) {
+  if(arr1.length !== arr2.length){
+    return false;
+  }
+  else{
+    for(let i =0; i < arr1.length; i++){
+      if(arr1[i] !== arr2[i] ** 2){
+        return false;
+      }
+    }
+    return true;
+  }
+}
+  
 // ------------------EJERCICIO III---------------------------//
 /**
  * Dado dos strings, escribe una function para determinar si el
