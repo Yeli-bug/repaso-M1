@@ -63,7 +63,17 @@ function same(arr1, arr2) {
  * @returns {boolean} - deberia retornar true o false.
  */
 
-function validAnagram(first, second) {}
+function validAnagram(first, second) {
+  if (first.length !== second.length) return false;
+
+  let aux = "";
+
+  for (let i = 0; i < second.length; i++) {
+    if (first.includes(second[i])) aux += second[i];
+  }
+
+  if (aux.length === first.length) return true;
+}
 
 // ------------------EJERCICIO IV---------------------------//
 /**
@@ -75,4 +85,11 @@ function validAnagram(first, second) {}
  * @returns {Array || undefined} - deberia retornar un array o undefined.
  */
 
-function sumZero(arr) {}
+function sumZero(arr) {
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 1; j < arr.length; j++) {
+      if (arr[i] + arr[j] === 0) return [arr[i], arr[j]];
+    }
+  }
+  return undefined;
+}
